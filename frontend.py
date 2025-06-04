@@ -1,10 +1,3 @@
-# frontend.py
-# if you dont use pipenv uncomment the following:
-# from dotenv import load_dotenv
-# load_dotenv()
-
-
-#Step1: Setup UI with streamlit (model provider, model, system prompt, web_search, reasoning, query)
 import streamlit as st
 
 st.set_page_config(page_title="LangGraph Agent UI", layout="centered")

@@ -1,3 +1,4 @@
+# backend.py
 from pydantic import BaseModel
 from typing import List
 from fastapi import FastAPI
@@ -10,6 +11,7 @@ class RequestState(BaseModel):
     system_prompt: str
     messages: List[str]
     allow_search: bool
+    allow_reasoning: bool
 
 
 ALLOWED_MODEL_NAMES = [
@@ -35,6 +37,7 @@ def chat_endpoint(request: RequestState):
             llm_id=request.model_name,
             messages=request.messages,
             allow_search=request.allow_search,
+            allow_reasoning=request.allow_reasoning,
             system_prompt=request.system_prompt,
             provider=request.model_provider
         )
